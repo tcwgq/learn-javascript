@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ 
+ </head>
+
+ <body>
+    <ul id="north">
+		<li city="沈阳">辽宁</li>
+		<li id="3" city="济南">山东</li>
+	</ul>
+	<ul id="south">
+		<li id="4" city="杭州">浙江</li>
+	</ul>
+	<input type="button" value="已有节点追加" onclick="f1();"/>
+  <script type="text/javascript">
+  //已有节点的追加，会发生节点物理位置移动现象
+	function f1(){
+		var zhe = document.getElementById('4');
+		var north = document.getElementById('north');
+		north.appendChild(zhe);
+	}
+  </script>
+ </body>
+</html>

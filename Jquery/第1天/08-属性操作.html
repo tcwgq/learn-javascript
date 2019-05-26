@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//获得属性信息（w3c定义属性和用户自定义属性）
+		alert($("input:first").attr("type"));
+		alert($("input:first").attr("class"));
+		alert($("input:first").attr("id"));
+		alert($("input:first").attr("name"));
+		alert($("input:first").attr("value"));
+		alert($("input:first").attr("addr"));
+	}
+	function fun2(){
+		//获得属性信息（w3c定义属性和用户自定义属性）
+		$("input:first").attr("class", "orange");
+		$("input:first").attr("id", "bbb");
+		$("input:first").attr("name", "user-name");
+		$("input:first").attr("value", "lisi");
+		$("input:first").attr("addr", "shanghai");
+		//禁止修改type属性
+		//js底层代码在有的浏览器中可以修改type属性
+		//document.getElementById("aaa").type="checkbox";
+		//$("input:first").attr("type", "orange");
+	}
+	function fun3(){
+		//除了type属性，其他的都可以删除
+		$("input:first").removeAttr("class");
+		$("input:first").removeAttr("id");
+		$("input:first").removeAttr("name");
+		$("input:first").removeAttr("value");
+		$("input:first").removeAttr("addr");
+		//禁止修改type属性
+		//js底层代码在有的浏览器中可以修改type属性
+		//document.getElementById("aaa").type="checkbox";
+		//$("input:first").attr("type", "orange");
+	}
+	function fun4(){
+		//批量修改多个属性.attr(json对象)
+		var attrs = {class:"pear", id:"bbb", name:"user---name", value:"wangwu"};
+		$("input:first").attr(attrs);
+	}
+	function fun5(){
+		//批量修改多个属性.attr(json对象)
+		$("input:first").attr("name", function(){ return "helloworld";});
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2>属性操作</h2>
+  <input type="text" class="apple" id="aaa" name="username" value="zhangsan" addr="beijing"/>
+  <br/>
+  <input type="button" value="获取" onclick="fun1()"/>
+  <input type="button" value="设置" onclick="fun2()"/>
+  <input type="button" value="删除属性" onclick="fun3()"/>
+  <input type="button" value="批量修改属性" onclick="fun4()"/>
+   <input type="button" value="通过函数返回值的形式修改属性值" onclick="fun5()"/>
+ </body>
+</html>

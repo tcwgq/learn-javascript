@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	
+  </script>
+ </head>
+
+ <body>
+  <h2>阻止浏览器默认动作</h2>
+  <form action="24.html" method="get">
+	  <input type="text" name="username"/>
+	  <input type="submit" value="注册"/>
+  </form>
+ </body>
+ <script type="text/javascript">
+	var fm = document.getElementsByTagName('form')[0];
+	//fm.onsubmit = function(){
+	//	alert('表单验证不正确');
+	//	return false;//阻止浏览器跳转
+	//}
+	//阻止浏览器默认动作
+	//return false，其只对DOM一级事件起作用，二级事件不起作用
+	//evt.preventDefault()，DOM一级，二级都起作用
+	fm.addEventListener('submit', function(evt){
+		//alert('表单验证不正确');
+		//return false;//阻止浏览器跳转
+		evt.preventDefault();//主流浏览器方法
+		//evt.returnValue=false;IE678
+		//return false，DOM一级事件设置起作用
+	});
+ </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//获取选中单选按钮的值
+		console.log($(".sx:checked").val());
+	}
+	function fun2(){
+		//设置
+		$(".sx").val(["male"]);
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2>单选按钮操作</h2>
+  性别：
+  <input type="radio" class="sx" name="sex" value="male"/>男
+  <input type="radio" class="sx" name="sex" value="female"/>女
+  <input type="radio" class="sx" name="sex" value="scret"/>保密
+  <br/>
+  <input type="button" value="获取" onclick="fun1()"/>
+  <input type="button" value="设置" onclick="fun2()"/>
+ </body>
+</html>

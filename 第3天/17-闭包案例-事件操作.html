@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//给li添加事件操作正确实现
+	window.onload  = function(){
+		var lis = document.getElementsByTagName('li');
+		for(var i = 0; i < lis.length; i++){
+			lis[i].onmouseover = over(i);
+			lis[i].onmouseout = out(i);
+		}
+
+		function over(n){
+			function f2(){
+				lis[n].style.backgroundColor = 'pink';
+			}
+			return f2;
+		}
+
+		function out(n){
+			function f2(){
+				lis[n].style.backgroundColor = '';
+			}
+			return f2;
+		}
+	}
+	
+  </script>
+ </head>
+
+ <body>
+   <h2>闭包案例-事件操作</h2>
+   <ul>
+		<li>aaa</li>
+		<li>bbb</li>
+		<li>ccc</li>
+   </ul>
+ </body>
+</html>

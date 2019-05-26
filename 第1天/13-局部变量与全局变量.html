@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+	//函数内部不使用var声明的变量为全局变量
+	function f1(){
+		subject = 'helloworld';
+	}
+	//必须函数调用后起作用
+	f1();
+	alert(subject);//如果带var，显示subject未定义
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js"></script>
+  <script type="text/javascript">
+	//页面加载完毕后，给option设置双击时事件，双击移动到另一方
+	$(function(){
+		//通过json对象为节点绑定多个事件
+		//$().bind(json对象)
+		$("div").bind({
+			click:function(){console.log(111);},
+			mouseover:function(){console.log(222);},
+			mouseout:function(){console.log(333);},
+		});
+	});
+  </script>
+  <style type="text/css">
+	div{
+		width:400px;
+		height:200px;
+		background-color:purple;
+	}
+  </style>
+ </head>
+
+ <body>
+  <h1>事件绑定</h1>
+  <div>I love java!</div>
+ </body>
+</html>

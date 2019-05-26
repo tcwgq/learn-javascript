@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//没有特殊说明，就是单次匹配
+	//特别字符集组成
+	//*，前面的匹配出现0次或多次
+	//+，前面的匹配出现1次或多次
+	//?，前面的匹配出现0次或1次
+	var str = '2016-12-13';
+	//*，前面的匹配出现0次或多次
+	var regex = /[0-9]*/;
+
+	var str = 'Today is 12-13';
+
+	var regex = /[0-9]*/;//Array [ "" ]，T位置出现了0次数字
+
+	var regex = /[0-9]+/;//Array [ "12" ]
+
+	var str = 'google';
+	//+，前面的匹配出现1次或多次
+	var regex = /go+gle/;//Array [ "google" ]
+
+	var str = 'hello';
+	//?，前面的匹配出现0次或1次
+	//最多出现一次
+	var regex = /hel?o/;//null
+
+	console.log(str.match(regex));
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

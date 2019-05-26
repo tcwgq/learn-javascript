@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//html()，获取标签内容，包括标签
+		var content = $("div").html();
+		console.log(content);
+	}
+	function fun2(){
+		//html(内容)，普通字符串和HTML标签都可以设置
+		$("div").html("l love java");
+		$("div").html("访问百度？请点<a href='http://www.baidu.com'>这里</a>");
+	}
+	function fun3(){
+		//只获取字符串，不获取标签
+		console.log($("div").text());
+	}
+	function fun4(){
+		//设置HTML标签时，"<"，">"变为符号实体(&lt, &gt)，浏览器不解析
+		$("div").text("<p>hel</p>lo");
+	}
+	//html和text方法的区别？纯字符串操作，效果完全相同，只是对于HTML标签的处理不同
+  </script>
+ </head>
+
+ <body>
+  <h2>标签包含内容操作</h2>
+  <div>Hello<span>world</span></div>
+  <br/>
+  <input type="button" value="html获取" onclick="fun1()"/>
+  <input type="button" value="html设置" onclick="fun2()"/>
+  <input type="button" value="text获取" onclick="fun3()"/>
+  <input type="button" value="text设置" onclick="fun4()"/>
+ </body>
+</html>

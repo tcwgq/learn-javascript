@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	var addr = "beijing";
+	var age = 23;
+	var height = 170;
+	var name = "jack";
+	var ismoney = 0;
+	//逻辑短路效果
+	console.log(addr || age);//addr已经可以决定最终结果，age就不用再判断了，被短路
+	console.log(alert('hello'));//undifined
+	console.log(height && alert('world'));//undefined
+	console.log(ismoney && alert(123));//0，没有输出123，被短路
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

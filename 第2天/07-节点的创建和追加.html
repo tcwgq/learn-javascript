@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	
+  </script>
+ </head>
+
+ <body>
+  <h2>节点的创建和追加</h2>
+ </body>
+ <script type="text/javascript">
+	/**
+		<ul>
+			<li city="沈阳">辽宁</li>
+			<li city="济南">山东</li>
+			<li city="杭州">浙江</li>
+		</ul>
+	**/
+	var province = ['辽宁', '山东', '浙江'];
+	var city = ['沈阳', '济南', '杭州'];
+	var ul = document.createElement('ul');
+	for(var k in province){
+		var li = document.createElement('li');
+		var text = document.createTextNode(province[k]);
+		li.appendChild(text);
+		li.setAttribute('city', city[k]);
+		ul.appendChild(li);
+	}
+	var body = document.getElementsByTagName('body')[0];
+	body.appendChild(ul);
+  </script>
+</html>

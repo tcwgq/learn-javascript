@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//同时继承多个对象，后者覆盖前者
+	var cat = {name:'xiaohua', climb:function(){console.log(this.name+'在爬树');}};
+	var bird = {sex:'female', fly:function(){console.log('飞翔');}};
+	var tiger = {act:'猛虎下山'};
+	function Dog(){
+		this.name = '旺财';
+		this.color = 'black';
+		this.age = 4;
+	}
+	Dog.prototype = cat;
+	Dog.prototype = bird;
+	Dog.prototype = tiger;
+	var dog = new Dog();
+	console.log(dog);//只继承tiger的，tiger覆盖前面的
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//对象调用其他方法或函数
+	var cat = {mingzi:'波斯猫', eat:function(){console.log(this.mingzi +'吃鱼');}};
+	var tiger = {mingzi : '老虎', act:function(){console.log('老虎下山');}};
+	cat.eat.call(tiger);
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

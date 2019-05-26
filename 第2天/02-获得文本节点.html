@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//获得文本节点
+	
+  </script>
+ </head>
+
+ <body>
+  <h2>helloworld</h2>
+  <div>I love java</div>
+  <script type="text/javascript">
+	//获得文本节点
+	var h2 = document.getElementsByTagName('h2')[0];
+	console.log(h2.firstChild);//#text "helloworld"
+	//通过文本节点获得文本信息
+	var value = h2.firstChild.nodeValue;
+	console.log(value);
+  </script>
+ </body>
+</html>
+

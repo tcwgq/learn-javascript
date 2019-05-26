@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//没有特殊说明，都是单次匹配
+	//从左到右，找到第一个满足条件的即可
+	//()，表示子表达式的开始和结束
+	//()称为模式单元
+	//作用：1.提高子表达式的优先级 2.从大的字符串里面拆分出小的字符串
+	var str = 'gogogogogle';
+	//1.提高子表达式的优先级
+	//表示go出现多次
+	//(go)中的表示go是模式单元内容
+	var regex = /(go)+gle/;
+
+	var str = '<h3>北京</h3>';
+	// 2.从大的字符串里面拆分出小的字符串
+	var regex = /<.*>(.*)<.*>/;
+
+	console.log(str.match(regex));
+
+	console.log(str.match(regex)[1]);
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

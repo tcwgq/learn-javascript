@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//给li设置点击事件，点击后，其内容追加到父窗口的h2里面
+	window.onload = function(){
+		var lis = document.getElementsByTagName('li');
+		for(var i = 0; i < lis.length; i++){
+			console.log(lis[i].firstChild.nodeValue);
+			lis[i].onclick=function(){
+				//opener代表父级窗口引用
+				opener.document.getElementsByTagName('h2')[0].innerHTML += this.firstChild.nodeValue;
+			}
+		}
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2>我是子页面</h2>
+  <ul>
+	<li>北京</li>
+	<li>上海</li>
+	<li>广东</li>
+	<li>深圳</li>
+  </ul>
+ </body>
+</html>

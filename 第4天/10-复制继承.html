@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//复制继承
+	//jquery中有广泛使用
+	//该继承允许继承多个对象
+	//该种继承方式比较灵活，可以根据多种需要为指定的对象继承成员
+	var cat = {color:'xiaohuamao', weapon:'伶牙俐齿', climb:function(){console.log('在爬树');}};
+	var seven = {eye:'闪闪发光', tail:'笔直的尾巴'};
+	function Dog(){
+		this.color = 'gray';
+		this.leg = 4;
+	}
+	
+	Dog.prototype.extend = function(obj){
+		//this代表调用该方法的当前对象
+		//遍历obj，获得具体成员，赋值给this对象
+
+		//继承本身不存在的成员
+		for(var key in obj){
+			if(!this.hasOwnProperty(key))
+			this[key] = obj[key];//直接为this对象赋值
+		}
+	}
+	var black = new Dog();
+	var yellow = new Dog();
+
+	black.extend(cat);//extend 使我们自定义的方法，为了是与后面jquery的方法名称保持一致
+	black.extend(seven);//继承多个
+	console.log(black);//对象成员，本身的，继承的
+	console.log(yellow);//对象成员，只有本身的
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

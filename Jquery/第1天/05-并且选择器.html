@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//$("h1, h2, h3, h4")
+		//:header
+		$(":header").css("color", "green");
+		//获取标题标签元素，并且有pear class属性
+		//$(":header")
+		//$(".pear")
+		$(":header.pear").css("color", "red");//可以调换选择器位置
+		//没有歧义
+		$(".pear:header").css("color", "red");
+		//获取指定区间的元素
+		//每个选择器使用前，已经获得的节点下标要归位（归零）
+		$("li:gt(1):lt(1)").css("background-color", "orange");
+		//并且关系的多个选择器，没有前后顺序关系，但要避免产生歧义
+		$("li.pear").css("background-color", "yellow");//不可调换选择器位置
+	}
+  </script>
+ </head>
+
+ <body>
+  <h1>并且选择器1</h1>
+  <h2>并且选择器2</h2>
+  <h3 class="pear">并且选择器3</h3>
+  <h4 class="pear">并且选择器4</h4>
+  <ul>
+	<li>aaa</li>
+	<li class="pear">bbb</li>
+	<li class="pear">ccc</li>
+	<li id="ddd">ddd</li>
+	<li>eee</li>
+  </ul>
+  <input type="button" value="点击" onclick="fun1()"/>
+ </body>
+</html>

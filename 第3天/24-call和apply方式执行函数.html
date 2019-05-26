@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//使用call或apply使函数发生执行
+	//函数.call(对象，参数1，参数2，参数3...)
+	//函数.apply(对象, [参数1，参数2，参数3...])
+	//call和apply的区别在于一个是可变参数，一个是数组参数
+	function getInfo(){
+		console.log(this.mingzi +'在爬树');
+	}
+	var cat = {mingzi:'波斯猫'};
+	getInfo.call(cat);//call方式执行函数
+	//getInfo没有参数，此处不需要传参
+	var dog = {mingzi:'德国黑贝'};
+	//类似于Java中的反射调用
+	getInfo.call(dog);
+	function f1(age){
+		console.log('名字：'+this.name+'--'+age);
+	}
+	var per1 = {name:'zhangSan'};
+	f1.call(per1, 23);
+	f1.apply(per1,[23]);
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

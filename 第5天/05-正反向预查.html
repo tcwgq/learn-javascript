@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script type="text/javascript">
+	//正反向预查
+	var str = 'http://www.baidu.com/shop/index.php?name=zhangsan&age=23&addr=beijing';
+	//获取?之后的queryString字符串
+	var regex = /([a-z])+=/g;//Array [ "name=", "age=", "addr=" ]
+	//利用正向匹配实现
+	//格式：var regex = /[a-z]+(?=正则模式)/，相当于辅助条件
+	var regex = /[a-z]+(?==)/g;//g表示全局查找，Array [ "name", "age", "addr" ]
+
+	//正向不匹配
+	//格式：格式：var regex = /[a-z]+(?!正则模式)/
+	var str = 'helloworld';
+	var regex = /hello(?!\d+)/g;//Array [ "hello" ]
+	console.log(str.match(regex));
+
+	//反向预查，js不支持，PHP支持
+	
+	var str = 'beijing2008';
+	//反向匹配
+	var regex = /(?<=[a-z]{7})\d+/;
+	
+
+	var str = 'xiaoming@163.com';
+	//反向不匹配
+	var regex = /(?<!@)\d{3}/;
+  </script>
+  <title>Document</title>
+ </head>
+ <body>
+  
+ </body>
+</html>

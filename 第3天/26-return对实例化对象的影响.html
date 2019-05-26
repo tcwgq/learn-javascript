@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//return对创建对象的影响
+	//对创建的对象没有影响，return后续的代码不能执行，后续成员丢失
+	function Cat(){
+		this.name = '波斯猫';
+		this.age = 5;
+		this.climb = function(){
+			console.log('在爬树');
+		}
+		return 123;
+		this.leg = 4;
+		this.color = 'black';
+	}
+	var cat = new Cat();//Object { name: "波斯猫", age: 5, climb: Cat/this.climb() }
+	console.log(cat);
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//全选
+		$(".hy").attr("checked", true);
+		//大部分的jQuery方法具有遍历机制
+	}
+	function fun2(){
+		//全不选
+		$(".hy").attr("checked", false);
+	}
+	function fun3(){
+		//反选
+		for(var i=0; i<$(".hy").length; i++){
+			var flag = $(".hy:eq("+i+")").attr("checked");
+			 $(".hy:eq("+i+")").attr("checked", !flag);
+		}
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2>复选框选择操作</h2>
+  爱好：
+  <input type="checkbox" class="hy" name="hobby" value="sing"/>唱歌
+  <input type="checkbox" class="hy" name="hobby" value="dance"/>跳舞
+  <input type="checkbox" class="hy" name="hobby" value="travel"/>旅游
+  <input type="checkbox" class="hy" name="hobby" value="photo"/>摄影
+  <br/>
+  <input type="button" value="全选" onclick="fun1()"/>
+  <input type="button" value="全不选" onclick="fun2()"/>
+  <input type="button" value="反选" onclick="fun3()"/>
+ </body>
+</html>

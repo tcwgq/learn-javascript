@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ 
+ </head>
+
+ <body>
+    <ul id="north">
+		<li city="沈阳">辽宁</li>
+		<li id="3" city="济南">山东</li>
+	</ul>
+	<ul id="south">
+		<li id="4" city="杭州">浙江</li>
+	</ul>
+	<input type="button" value="节点复制和追加" onclick="f1();"/>
+  <script type="text/javascript">
+  //节点复制，复制一份浙江，给north
+ //节点复制时，id会重复，通过id获取元素时，只能获得第一个
+	function f1(){
+		var zhe = document.getElementById('4');
+		var fu_zhe = zhe.cloneNode(true);//深层复制
+		//var fu_zhe = zhe.cloneNode(false);//浅层复制
+		var north = document.getElementById('north');
+		north.appendChild(fu_zhe);
+	}
+  </script>
+ </body>
+</html>

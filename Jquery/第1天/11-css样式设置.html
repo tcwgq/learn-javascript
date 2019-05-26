@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//获取，内部，外部，行内等等的样式，都可以获得
+		//js DOM操作只能获得行内样式
+		console.log($("div").css("color"));
+		console.log($("div").css("width"));
+		console.log($("div").css("height"));
+		console.log($("div").css("background-color"));
+		console.log($("div").css("font-size"));
+		//复合样式获取不了值，需要采用具体样式获取
+		console.log($("div").css("border"));
+		console.log($("div").css("border-left-style"));
+		console.log($("div").css("border-left-color"));
+		console.log($("div").css("border-left-width"));
+	}
+	function fun2(){
+		//设置，设置为行内样式
+		//有则修改，没有则添加
+		$("div").css("font-size", "30px");//添加操作
+		$("div").css("color", "black");//修改操作
+		$("div").css("height", "500px");//添加操作
+		//可以直接设置复合样式
+		$("div").css("border", "4px solid yellow");
+	}
+	function fun3(){
+		//通过json对象批量修改
+		$("div").css({"font-size":"20px", color:"purple", height:"1000px"});
+	}
+  </script>
+  <link href="11.css" type="text/css" rel="stylesheet"/>
+  <style type="text/css">
+	div{
+		font-size:30px;
+	}
+  </style>
+ </head>
+
+ <body>
+  <h2>css样式操作</h2>
+  <div style="color:red">Good good study, day day up!</div>
+  <br/>
+  <input type="button" value="获取" onclick="fun1()"/>
+  <input type="button" value="设置" onclick="fun2()"/>
+  <input type="button" value="json方式批量设置" onclick="fun3()"/>
+ </body>
+</html>

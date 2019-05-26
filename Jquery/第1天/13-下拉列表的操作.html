@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//获取被选中下拉列表的值
+		//适合单选的形式
+		console.log($("option:selected").val());
+		//多选
+		//$(下拉列表).val()，获得全部被选中下拉列表的值
+		console.log($("select").val());
+	}
+	function fun2(){
+		//设置指定项目被选中
+		$("select").val(["beijing", "shenzhen"]);
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2>下拉列表操作</h2>
+  城市：
+  <select multiple="multiple">
+	<option value="defalut">--请选择--</option>
+	<option value="beijing">北京</option>
+	<option value="shanghai">上海</option>
+	<option value="guangdong">广东</option>
+	<option value="shenzhen">深圳</option>
+  </select>
+  <br/>
+  <input type="button" value="获取" onclick="fun1()"/>
+  <input type="button" value="设置" onclick="fun2()"/>
+ </body>
+</html>

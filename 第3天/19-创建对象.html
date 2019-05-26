@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//构造函数创建对象
+	function Animal(nm){
+		//以下两个属性，是每个实例化对象的默认属性
+		this.height = 1.2;
+		this.color = 'black';
+		this.name = nm;
+	}
+	var pig = new Animal('小猪');//会使得Animal函数自动发生调用
+	console.log(pig);//Animal { height: 1.2, color: "black", name: "小猪" }
+	console.log(pig.height);
+	console.log(pig.color);
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

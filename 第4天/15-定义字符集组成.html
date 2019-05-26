@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//定义字符集组成
+	//没有特殊说明，就是单次匹配，从左边匹配第一次出现的字符
+	//[a-z]表示a-z中的一个字符
+	//[a-e]表示a-e中的一个
+	//[0-9]表示0-9中的一个字符
+	//[a-zA-Z]表示大小写中的一个
+	//[aghio]表示aghio中的一个
+	var str = 'today and yesterday';//匹配一个d，注意不是多个d
+	var regex = /[a-e]/;
+	var regex = /[A-Z]/;//null
+	var regex = /[a-zA-Z]/;//Array [ "t" ]
+	var regex = /[a-zA-z0-9-_]/;//Array [ "t" ]
+	console.log(str.match(regex));
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

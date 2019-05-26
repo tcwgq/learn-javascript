@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>new document</title>
+<meta name="generator" content="editplus" />
+<meta name="author" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript">
+	(function() {
+		var jq = function(arg) {
+			return new jq.fn.init(arg);
+		};
+		jq.fn = {
+			init : function(arg) {
+				if (arg.nodeType) {
+					//dom对象
+					this[0] = arg;
+					this.length = 1;
+					console.log(this);
+					console.log("dom对象");
+					return false;
+				}
+				if (arg.indexOf("#") != -1) {
+					//id选择器
+					var name = arg.substr(1, arg.length - 1);
+					var ele = document.getElementById(name);
+					//dom对象是jQuery的数组部分，两者做结合
+					this[0] = ele;
+					this.length = 1;
+					console.log(this);
+					console.log("id选择器");
+				} else {
+					//标签选择器
+					var eles = document.getElementsByTagName(arg);
+					this.length = eles.length;
+					for ( var i = 0; i < eles.length; i++) {
+						this[i] = eles[i];
+					}
+					console.log(this);
+					console.log("标签选择器");
+				}
+			},
+			css : function(k, v) {
+				for ( var i = 0; i < this.length; i++) {
+					this[i].style[k] = v;
+				}
+			},
+			attr : function(k, v) {
+				for ( var i = 0; i < this.length; i++) {
+					this[i].setAttribute(k, v);
+				}
+			},
+			each : function(callback) {
+				for ( var i = 0; i < this.length; i++) {
+					//函数执行
+					//函数.call(函数内部this的指引, 实参 , 实参 , 实参 ...)
+					callback.call(this[i], i, this[i]);
+				}
+			}
+		};
+		jq.fn.init.prototype = jq.fn;
+		window.$ = jq;
+	})();
+</script>
+<script type="text/javascript">
+	function fun1() {
+		//$(document.getElementById("apple"));
+		//console.log($("#apple"));
+		$("li").css("background-color", "red");
+		$.each(function(k, v) {
+			this.style.backgroundColor = "green";
+		});
+	}
+</script>
+<style type="text/css">
+</style>
+</head>
+
+<body>
+	<h1>开发jquery</h1>
+	<div id="apple">I love java!</div>
+	<ul>
+		<li>aaa</li>
+		<li>bbb</li>
+		<li>ccc</li>
+	</ul>
+	<input type="button" value="触发" onclick="fun1();" />
+</body>
+</html>

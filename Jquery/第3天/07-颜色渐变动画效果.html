@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js"></script>
+  <script type="text/javascript">
+	function fun1(){
+		//隐藏
+		//$().fadeOut()
+		$("div").fadeOut(2000);
+	}
+	function fun2(){
+		//显现
+		//$().fadeIn()
+		$("div").fadeIn(2000)
+	}
+	function fun3(){
+		//开关效果
+		$("div").fadeToggle(2000);
+	}
+  </script>
+  <style type="text/css">
+	div{
+		width:400px;
+		height:200px;
+		background-color:lightgreen;
+	}
+  </style>
+ </head>
+
+ <body>
+  <h1>渐变动画效果</h1>
+  <div>I love java!</div>
+  <input type="button" value="隐藏" onclick="fun1();"/>
+  <input type="button" value="显示" onclick="fun2();"/>
+  <input type="button" value="开关" onclick="fun3();"/>
+ </body>
+</html>

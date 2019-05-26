@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//方式一，var arr = [元素，元素，元素...];
+	var colors = ['blue', 'green', 'red'];
+	console.log(colors);
+	console.log(colors[0]);
+	//方式二，var arr = new Array(元素，元素，元素...);
+	var animal = new Array('dog', 'cat', 'pig');
+	console.log(animal);
+	//方式三，var arr = new Array();先声明数组，在添加元素，arr[下标] = 值
+	var city = new Array();
+	city[0] = 'beijing';//数组元素部分
+	city[1] = 'shanghai';//数组元素部分
+	city[2] = 'nanjing';//数组元素部分
+	city['shandong'] = 'jinan';//对象成员部分
+	//对象访问成员，两种方式-对象.成员名或者对象[成员名]
+	console.log(city);
+	console.log(city.shandong);
+	console.log(city['shandong']);
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

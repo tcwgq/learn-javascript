@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//原型继承，继承单一成员
+	function Tiger(){
+		this.color = 'yellow';
+		this.leg = 4;
+		this.act = '猛虎下山';
+	}
+	//构造函数继承对象
+	//可以同时继承多个
+	Tiger.prototype.weight = 270;
+	Tiger.prototype.run = function(){
+		console.log('在森林奔跑');
+	}
+	var north = new Tiger();
+	console.log(north);//对象的成员：本身默认的，还有继承的
+	north.run();
+	//本身和继承的有同名的成员，使用本身的成员
+	//单一成员和对象同时继承，需要先继承对象，再继承单一成员
+	//同时继承多个对象，后者覆盖前者
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

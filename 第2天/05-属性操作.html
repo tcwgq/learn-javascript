@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	
+  </script>
+ </head>
+
+ <body>
+  <h2>属性操作</h2>
+  <input type="text" name="username" value="zhangSan" class="orange" weight="130"/>
+  <input type="button" value="获取" onclick="f1();"/>
+   <input type="button" value="设置" onclick="f2();"/>
+  <script type="text/javascript">
+	var input = document.getElementsByTagName('input')[0];
+	function f1(){
+		//获取节点属性值
+		//元素.属性名，只能获取w3c规定的属性名
+		//元素.getAttribute()，可以获取所有属性值，包括自定义的属性名称
+		console.log(input.type);
+		console.log(input.name);
+		console.log(input.value);
+		console.log(input.class);//undifined，class是关键字，需要变形为className
+		console.log(input.className);
+		console.log(input.weight);//undifined
+		console.log(input.getAttribute('weight'));//获取自定义属性值
+	}
+	function f2(){
+		//设置属性值
+		input.name="liSi";
+		input.value="1234";
+		input.className="yellow";
+		//input.type="checkbox";//可以使用，但不推荐改变type，存在浏览器兼容问题
+		input.weight="150";//自定义属性修改失败
+		input.setAttribute("weight", "150");
+		input.setAttribute("class", "red");//规定的自定义的都可以使用
+	}
+  </script>
+ </body>
+</html>

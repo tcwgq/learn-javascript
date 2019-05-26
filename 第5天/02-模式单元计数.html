@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//小括号计数方法
+	//横向：从左到右依次计数
+	//纵向：从外到里依次计数
+	//横向-纵向：依次横向纵向计数，先把横向1的纵向计数完，再计数横向2，依次类推
+	var str = '2015-05-12 16:52:17';
+	var regex = /([0-9]+-(([0-9]+)-[0-9]+)) ((([0-9]+):[0-9]+):[0-9]+)/;
+	console.log(str.match(regex));
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

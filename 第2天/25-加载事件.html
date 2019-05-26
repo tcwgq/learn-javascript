@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//js代码位于h2上面，报错
+	function jiazai(){
+		var h2 = document.getElementsByTagName('h2')[0];
+		h2.onclick = function(){
+			console.log('helloworl');
+		}
+	}
+	function f22(){
+		console.log('f22');
+	}
+	//两种方式
+	//第一种，<body onload="">
+	//第二种，window.onload=jiazai;
+	//window.onload=有名函数/匿名函数
+	window.onload=jiazai;
+	window.onload=f22;
+	window.onload=function(){//匿名函数加载事件
+		jiazai();
+		f22();
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2>加载事件</h2>
+ </body>
+</html>

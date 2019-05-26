@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//:checked，获得被选中的复选框
+		console.log($(".hby:checked"));
+		//:checked，获得被选中的单选框
+		console.log($(".sx:checked"));
+		//:selected，获得被选中的下拉项
+		console.log($("option:selected"));
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2>表单域选中选择器</h2>
+  爱好：
+  <input type="checkbox" class="hby" name="hobby" value="1"/>唱歌
+  <input type="checkbox" class="hby" name="hobby" value="2"/>跳舞
+  <input type="checkbox" class="hby" name="hobby" value="3"/>喝药
+  <input type="checkbox" class="hby" name="hobby" value="4"/>k粉
+  <hr/>
+  性别：
+  <input type="radio" class="sx" name="sex" value="male"/>男
+  <input type="radio" class="sx" name="sex" value="female"/>女
+  <input type="radio" class="sx" name="sex" value="unknown"/>保密
+  <hr/>
+  城市：
+  <select>
+	<option value="beijing">北京</option>
+	<option value="shanghai">上海</option>
+	<option value="guangdong">广东</option>
+	<option value="shenzhen">深圳</option>
+  </select>
+  <br/>
+  <input type="button" value="点击" onclick="fun1()"/>
+ </body>
+</html>

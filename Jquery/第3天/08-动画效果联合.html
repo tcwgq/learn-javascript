@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js"></script>
+  <script type="text/javascript">
+	function fun1(){
+		$("div").hide(2000, fun2);
+	}
+	function fun2(){
+		$("div").css("background-color", "lightblue");
+		$("div").slideDown(2000, fun3);
+	}
+	function fun3(){
+		$("div").css("background-color", "purple");
+		$("div").slideUp(2000, fun4);
+	}
+	function fun4(){
+		$("div").css("background-color", "orange");
+		$("div").fadeIn(2000, function(){
+			alert("终于完事了");
+		});
+	}
+  </script>
+  <style type="text/css">
+	div{
+		width:400px;
+		height:200px;
+		background-color:lightgreen;
+	}
+  </style>
+ </head>
+
+ <body>
+  <h1>动画效果联合</h1>
+  <div>I love java!</div>
+  <input type="button" value="触发" onclick="fun1();"/>
+ </body>
+</html>

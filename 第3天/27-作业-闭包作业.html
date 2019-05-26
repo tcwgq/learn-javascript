@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	
+  </script>
+ </head>
+
+ <body>
+	<h2></h2>
+	<ul>
+		<li>aaa</li>
+		<li>bbb</li>
+		<li>ccc</li>
+	</ul>
+	<script type="text/javascript">
+		var lis = document.getElementsByTagName('li');
+		for(var i = 0; i < lis.length; i++){
+			//lis[i].onclick = function(){
+				//this代表每个li元素节点对象
+				//alert(this.firstChild.nodeValue);
+				//alert(lis[i].firstChild.nodeValue);
+			//}
+			//lis[i].onclick = clk(i);
+			//直接使用匿名函数自调用
+			lis[i].onclick = (function(n){
+				return function(){
+					alert(lis[n].firstChild.nodeValue);
+				}
+			})(i);
+		}
+		//使用闭包实现
+		function clk(n){
+			function f1(){
+				alert(lis[n].firstChild.nodeValue);
+			}
+			return f1;
+		}
+
+		function clk1(n){
+			return function(){
+				alert(lis[n].firstChild.nodeValue);
+			}
+		}
+	</script>
+ </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//静态成员
+	function Cat(){
+		this.leg = 4;
+		this.color = 'black';
+	}
+	//以上代码有两种对象，kitty普通对象和Cat函数对象
+	//给Cat对象丰富成员，该成员就是静态成员
+	Cat.eat = function(){
+		console.log('吃鱼');
+	}
+	Cat.climb = '爬树';
+	console.log(Cat.climb);
+	Cat.eat();
+	console.log(Cat.leg);//undefined
+	var kitty = new Cat();
+	kitty.eat();//undefined
+	console.log(kitty.climb);// kitty.eat is not a function
+	//两种对象有各自访问的成员，它们的成员不能交叉访问
+	//给构造函数直接丰富的成员就是静态成员
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

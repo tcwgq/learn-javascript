@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js"></script>
+  <script type="text/javascript">
+	//页面加载完毕后，给option设置双击时事件，双击移动到另一方
+	$(function(){
+		//通过json对象为节点绑定多个事件
+		//$().bind(json对象)
+		$("div").bind({
+			click:function(){console.log(111);},
+			mouseover:function(){console.log(222);},
+			mouseout:function(){console.log(333);},
+		});
+		$("div").bind("mouseover", function(){
+			$(this).css("font-size", "30px");
+		});
+		$("div").bind("mouseout", function(){
+			$(this).css("font-size", "10px");
+		});
+		//有名函数事件绑定
+		$("div").bind("click", fa);
+		$("div").bind("click", fb);
+	});
+	function fa(){
+		console.log("aaa");
+	}
+	function fb(){
+		console.log("bbb");
+	}
+	function fun1(){
+		//全部事件类型，全部处理函数都取消
+		$("div").unbind();
+	}
+	function fun2(){
+		//取消指定类型的事件
+		$("div").unbind("mouseover");
+		$("div").unbind("click");
+	}
+	function fun3(){
+		//取消指定事件类型，指定处理函数
+		$("div").unbind("click", fb);
+	}
+  </script>
+  <style type="text/css">
+	div{
+		width:400px;
+		height:200px;
+		background-color:lightgreen;
+	}
+  </style>
+ </head>
+
+ <body>
+  <h1>事件解绑</h1>
+  <div>I love java!</div>
+  <input type="button" value="取消" onclick="fun1();"/>
+  <input type="button" value="取消指定事件类型" onclick="fun2();"/>
+  <input type="button" value="取消指定事件类型，指定处理函数" onclick="fun3();"/>
+ </body>
+</html>

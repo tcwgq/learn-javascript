@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script type="text/javascript">
+	//匿名函数自调用
+	var getInfo = function(){
+		console.log('today is sunny');
+	}
+	getInfo = 'okok';//同名变量覆盖
+	getInfo();
+	//程序代码没有停顿，立即执行
+	//好处：可以避免变量污染, 就是匿名函数没有名字，不会出现命名冲突
+	(function(title){
+		console.log('helloworld'+ title);
+	})('java');
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

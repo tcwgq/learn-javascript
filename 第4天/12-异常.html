@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	var week = 'sunday';
+	var weather = 'sunny';
+	var wind = 5;
+	//同Java
+	try{
+		console.log(week);
+		console.log(weather);
+		console.log(city);// 异常后面的代码仍然不执行
+		console.log(wind);
+	}catch(ex){
+		//ex是对象，可以获取异常信息
+		//异常信息通畅保存到日志文件，供以后查看使用
+		console.log(ex.message);
+	}finally{
+		console.log('finally yi ding zhi xing');
+	}
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

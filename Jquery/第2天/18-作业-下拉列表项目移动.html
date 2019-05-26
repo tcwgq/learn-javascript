@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js"></script>
+  <script type="text/javascript">
+	//页面加载完毕后，给option设置双击时事件，双击移动到另一方
+		$(document).ready(function(){
+			$("option").dblclick(function(){
+				if(this.parentNode.id==="left"){
+					$(this).appendTo($("#right"));
+				}else{
+					$(this).appendTo($("#left"));
+				}
+			});
+			//下面这种做法，项目移动到对方，就不能回来了
+//			$("#left option").dblclick(function(){
+//				$(this).appendTo($("#right"));
+//			});
+//			$("#right option").dblclick(function(){
+//				$(this).appendTo($("#left"));
+//			});
+		});
+	function fun1(){
+		//左侧选中的项目移动到右侧
+		$("#left option:selected").appendTo($("#right"));
+	}
+	function fun2(){
+		//左侧全部项目移动到右侧
+		$("#left option").appendTo($("#right"));
+	}
+	function fun3(){
+		//右侧选中的项目移动到左侧
+		$("#right option:selected").appendTo($("#left"));
+	}
+	function fun4(){
+		//右侧全部项目移动到左侧
+		$("#right option").appendTo($("#left"));
+	}
+  </script>
+  <style type="text/css">
+	select{
+		width:100px;
+		height:150px;
+	}
+	div{
+		float:left;
+	}
+  </style>
+ </head>
+
+ <body>
+  <h1>下拉列表项目移动</h1>
+  <div>
+	 <select id="left" multiple="multiple">
+		<option>111</option>
+		<option>222</option>
+		<option>333</option>
+		<option>444</option>
+		<option>555</option>
+	 </select>
+  </div>
+  <div>
+	 <input type="button" value="-->" onclick="fun1();"/><br/>
+	 <input type="button" value="==>" onclick="fun2();"/><br/>
+	 <input type="button" value="<--" onclick="fun3();"/><br/>
+	 <input type="button" value="<==" onclick="fun4();"/><br/>
+  </div>
+  <div>
+	 <select id="right" multiple="multiple">
+		<option>aaa</option>
+		<option>bbb</option>
+		<option>ccc</option>
+		<option>ddd</option>
+		<option>eee</option>
+	  </select>
+  </div>
+ </body>
+</html>

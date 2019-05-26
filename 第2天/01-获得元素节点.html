@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	var password = document.getElementById('password');
+	//放在上面获取不到元素，放在下面就可以了
+	console.log(password);//null
+  </script>
+ </head>
+
+ <body>
+  <h2>获取元素</h2>
+  <input type="text" name="username" value="zhangSan"/></br>
+  <input id="password" type="text" name="password" value="123"/></br>
+  <input type="checkbox" name="option" value="shandong"/></br>
+  <input type="button" value="触发" onclick="f1();"/>
+ </body>
+</html>
+<script type="text/javascript">
+	//getElementById
+	var password = document.getElementById('password');
+	console.log(password);//<input type="text" value="123" name="password" id="password">
+	//getElementsByTagName()
+	var h2 = document.getElementsByTagName('h2');//HTMLCollection [ <h2> ]返回集合列表对象
+	console.log(h2);
+	console.log(h2[0]);
+	var inputs = document.getElementsByTagName('input');//HTMLCollection [ <input>, <input#password>, <input>, <input> ]无论要获得的元素是几个，返回的都是集合数组对象
+	console.log(inputs);
+	console.log(inputs[1]);//<input type="text" value="123" name="password" id="password">
+	console.log(inputs.item(1));//两种获取元素的方式
+	//getElementsByName()，不推荐使用，有浏览器兼容问题，最好放在<form>标签内，通常应用在form表单里面，有的浏览器针对表单域使用该方法
+	var ele = document.getElementsByName('username');//NodeList [ <input> ]，集合列表对象，获取具体元素对象，与上同
+	console.log(ele);
+	console.log(ele[0]);//<input type="text" value="zhangSan" name="username">
+	console.log(ele.item(0));//<input type="text" value="zhangSan" name="username">
+</script>

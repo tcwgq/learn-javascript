@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//在方法里面代表调用方法的当前对象
+	var cat = {name:'xiaohua', climb:function(){console.log(this.name+'在爬树')}};
+	cat.climb();
+	//代表window对象
+	var weather = 'sun';
+	function getInfo(){
+		console.log(this.weather);
+	}
+	window.getInfo();
+	//在事件函数中，代表元素节点对象
+	
+
+
+	//在call和apply方法使用时，代表任意其他对象
+	function f1(){
+		console.log(this.name+'走直线');
+	}
+	f1.apply(cat);//f1中的this代表cat
+	var dog = {name:'旺财'};
+	f1.apply(dog);//f1中的this代表dog
+  </script>
+ </head>
+
+ <body>
+	<h2></h2>
+	<ul>
+		<li>aaa</li>
+		<li>bbb</li>
+		<li>ccc</li>
+	</ul>
+	<script type="text/javascript">
+		var lis = document.getElementsByTagName('li');
+		for(var i = 0; i < lis.length; i++){
+			lis[i].onclick = function(){
+				//this代表每个li元素节点对象
+				alert(this.firstChild.nodeValue);
+			}
+		}
+	</script>
+ </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//没有特殊说明，是单次匹配
+	//.，匹配除\n换行字符以外的任何单字符 .*表示任意内容
+	//\，转义字符
+	//|，两项之间的一个，或者关系
+	var str = 'xiaoming likes apple, yuehan likes bread!';
+	//|，两项之间的一个，或者关系
+	var regex = /apple|banana/;//Array [ "apple" ]
+
+	var str = 'hello123wonrld*&^%bncm!!34';
+	//.，匹配除\n换行字符以外的任何单字符 .*表示任意内容
+	var regex = /.*/;//Array [ "hello123world*&^%bncm!!34" ]
+
+	var str = 'hello123wo\nrld*&^%bncm\n!!34';
+	//.，匹配除\n换行字符以外的任何单字符 .*表示任意内容
+	var regex = /.*/;//Array [ "hello123wo" ]
+
+
+	var str = '192.168-\*';
+	//\，转义字符
+	var regex = /[0-9]+\.[0-9]+-*/;//两个连续的数字字符串中间出现个，null
+
+	console.log(str.match(regex));
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

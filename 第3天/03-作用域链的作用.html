@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//内部环境可以访问外部环境的变量，反之不然
+	var week = "sunday";
+	function f1(){
+		var weather = "winter";
+		console.log(week);
+	}
+	f1();
+	console.log('weather='+weather);//weather未定义
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

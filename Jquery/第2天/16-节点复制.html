@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	//页面加载完毕之后，要给#shu内部的li设置事件
+	//给每个li加上事件
+	$(document).ready(function(){
+		$("#shu li").mouseover(function(){
+			$(this).css("background-color", "lightgreen");
+		});
+		$("#shu li").mouseout(function(){
+			$(this).css("background-color", "");
+		});
+	});
+	function f1(){
+		//复制一份张飞节点，被追加给wu
+		//var fei = $("#fei").clone(false);//复制节点，没有事件
+		var fei = $("#fei").clone(true);//复制节点，有事件
+		$("#wu").append(fei);
+
+	}
+  </script>
+  <style type="text/css">
+	
+  </style>
+ </head>
+
+ <body>
+  <h2>节点复制</h2>
+  <ul id="shu">
+	<li id="bei">刘备</li>
+	<li id="yu">关羽</li>
+	<li id="fei">张飞</li>
+	<li id="yun">赵云</li>
+  </ul>
+   <ul id="wu">
+	<li id="quan">孙权</li>
+	<li>周瑜</li>
+	<li>黄盖</li>
+	<li id="xiang">孙尚香</li>
+  </ul>
+  <input type="button" value="复制" onclick="f1();"/>
+ </body>
+</html>

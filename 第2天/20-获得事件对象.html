@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	
+  </script>
+  <style type="text/css">
+	  h2{
+		background-color:lightgreen;
+	  }
+  </style>
+ </head>
+
+ <body>
+  <h2>获取事件对象</h2>
+ </body>
+ <script type="text/javascript">
+	h2 = document.getElementsByTagName('h2')[0];
+	//主流浏览器(IE9以上)，事件对象就是事件处理函数的第一个参数
+	h2.onclick = function(evt){
+		console.log(evt);//click { target: <h2>, buttons: 0, clientX: 363, clientY: 40, layerX: 363, layerY: 40 }
+		alert(evt);
+	}
+ </script>
+</html>

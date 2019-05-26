@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//获取地址栏信息
+	function f1(){
+		console.log(window.location.href);
+	}
+	//设置浏览器信息
+	function f2(){
+		alert('操作成功');
+		window.location.href="24.html";
+		window.location.href=window.location.href;
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2></h2>
+  <input type="button" value="获取" onclick="f1();"/>
+  <input type="button" value="设置" onclick="f2();"/>
+ </body>
+</html>

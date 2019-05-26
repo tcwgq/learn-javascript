@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	function Dog(){
+		this.color = 'gray';
+		this.age = 5;
+	}
+	var wangcai = new Dog();
+	console.log(wangcai.constructor);//function Dog()
+	function f1(){
+		console.log(123);
+	}
+	//函数就是对象，可以获得函数的构造器
+	console.log(f1.constructor);//function Function()
+	//通过Function实例化一个函数出来
+	//function getInfo(name,age){console.log(name + '--'+age);}
+	var getInfo = new Function("name", "age","console.log(name + '--'+age)");//还尼玛必须用双引号
+	getInfo('zhangsan', 23);
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

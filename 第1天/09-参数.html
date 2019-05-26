@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//使用arguments关键字，可以接收传递的参数信息
+	//可以通过数组下标访问参数信息
+	//可以通过length属性获取实参个数
+	//同一个函数调用，传递的参数个数不同，结果不同，实现函数重载的效果
+	//函数重载和Java中的一样
+	function getInfo(){
+		var num = arguments.length;
+		if(num == 0){
+			console.log('个人信息');
+		}else if(num == 1){
+			console.log('名字'+arguments[0]);
+		}
+		//console.log('名字'+arguments[0] +'--' +'年龄'+ arguments[1] +'--'+'城市'+ arguments[2]);
+		//console.log('个人信息');
+		//console.log(arguments);
+	}
+	getInfo();
+	getInfo('zhangSan');
+	getInfo('zhangSan', 23);
+	getInfo('zhangSan', 23, '北京');
+	getInfo('zhangSan', 'beijiing');//必须对应的来，不然不匹配
+	getInfo('zhangSan', 23, 'guangzhou', 'hello');
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

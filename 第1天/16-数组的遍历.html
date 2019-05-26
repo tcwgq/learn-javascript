@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	var animals = ['dog', 'cat', 'pig', 'duck'];
+	animals['north'] = 'wolf';
+	animals.south = 'tiger';
+	animals[4] = 'panada';
+	animals[20] = 'checken';
+	//第一种，常规遍历方式，下标有跳跃，显示undefined
+	for(var i = 0; i < animals.length; i++){
+		console.log(animals[i]);
+	}
+	//for-in遍历，可以遍历数组和对象，下标有跳跃，也没有关系
+	//for(var 下标变量 in 数组/对象)
+	for(var index in animals){
+		console.log(index + '--' +animals[index]);
+	}
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

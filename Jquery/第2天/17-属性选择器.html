@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function f1(){
+		//[attribute]，匹配包含给定属性的元素。注意，在jQuery 1.3中，前导的@符号已经被废除！如果想要兼容最新版本，只需要简单去掉@符号即可。
+		$("[size]").css("background-color", "lightgreen");
+		//[attribute=value]，匹配给定的属性是某个特定值的元素
+		$("[name=password]").css("color", "red");
+		//[attribute^=value]，匹配给定的属性是以某些值开始的元素
+		$("[name^=pass]").css("font-size", "50px");
+		//[attribute$=value]，匹配给定的属性是以某些值结尾的元素
+		$("[value$=6228]").css("background-color", "red");
+		//[attribute!=value]，匹配所有不含有指定的属性，或者属性不等于特定值的元素。
+		//此选择器等价于:not([attr=value])，要匹配含有特定属性但不等于特定值的元素，请使用[attr]:not([attr=value])
+		//$("[class!=orange]").css("background-color", "yellow");
+		//我们要找的是有class属性，但属性值不是orange
+		//[attribute1][attribute2]...[attributeN]
+		$("[class][class!=orange]").css("background-color", "lightblue");
+		$("input[class][name=username][value]").css("color", "orange");
+		//[attribute*=value]，匹配给定的属性是以包含某些值的元素
+		$("[name*=ser]").css("background-color", "purple");
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2>属性选择器</h2>
+  <input type="text" class="orange" size="10" name="username" value="tom"/><br/>
+  <input type="text" class="orange" size="100" name="userpassword" value="tom"/><br/>
+   <input type="text" class="pear" size="10" name="phone" value="15588656228"/><br/>
+  <input type="button" value="触发" onclick="f1();"/>
+ </body>
+</html>

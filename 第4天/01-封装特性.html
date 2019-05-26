@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//封装特性
+	function Dog(){
+		//私有成员
+		var weight = 120;//私有成员属性
+		var run = function(){//私有成员方法
+			return '每天跑步5公里';
+		}
+		//私有成员只能在构造函数内部访问
+		//可以制作对外公开的方法，间接访问私有成员
+		this.show = function(){
+			console.log(weight +'--'+run());
+		}
+		//this声明的都是public属性的
+		this.name = '旺财';
+		this.hobby = '啃骨头';
+		this.leg = 4;
+	}
+	var black = new Dog();
+	console.log(black);
+	black.show();
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

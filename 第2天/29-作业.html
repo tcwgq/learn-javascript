@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+  //构造一个无序列表，并给每个li添加mouseout, mouseover事件
+	window.onload = function(){
+		var cars = ['奔驰', '宝马', '奥迪', '保时捷'];
+		var ul = document.createElement('ul');
+		for(var i = 0; i < cars.length; i++){
+			var li = document.createElement('li');
+			li.addEventListener('mouseover', function(){
+				this.style.backgroundColor = 'lightgreen';
+			});
+			li.addEventListener('mouseout', function(){
+				this.style.backgroundColor = 'white';
+			});
+			var txt = document.createTextNode(cars[i]);
+			li.appendChild(txt);
+			ul.appendChild(li);
+		}
+	//var body = document.getElementsByTagName('body')[0];
+	document.body.appendChild(ul);
+	}
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	
+  </script>
+ </head>
+
+ <body>
+  <h2>属性操作</h2>
+  <input type="text" name="username" value="zhangSan" class="orange" weight="130"/>
+ </body>
+  <script type="text/javascript">
+	var input = document.getElementsByTagName('input')[0];
+	console.log(input.attributes);//NamedNodeMap [ name="username", value="zhangSan", class="orange", weight="130", type="text" ]
+	//获得具体属性节点
+	console.log(input.attributes.value);//value="zhangSan"
+	//nodeType返回节点类型
+	console.log(input.attributes.value.nodeType);//2表示属性节点
+	console.log(input.nodeType);//1表示元素节点，3表示文本节点，9表示文档节点
+  </script>
+</html>

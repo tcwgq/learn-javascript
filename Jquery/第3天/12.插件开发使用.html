@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js"></script>
+  <script type="text/javascript">
+	$.fn.hello = function(){
+		console.log("hello");
+	}
+	$.fn.extend({
+		fa:function(){
+			console.log("aaa");
+		},
+		fb:function(){
+			console.log("bbb");
+		}
+	});
+	$.weather = function(){
+		console.log("weather is ok!");
+	}
+	function fun1(){
+		$("h1").css("color", "lightgreen");
+		$("h1").hello();
+		$("h1").fa();
+		$("h1").fb();
+		$.weather();
+	}
+  </script>
+  <style type="text/css">
+  </style>
+ </head>
+
+ <body>
+  <h1>jquery插件开发</h1>
+  <input type="button" value="触发" onclick="fun1();"/>
+ </body>
+</html>

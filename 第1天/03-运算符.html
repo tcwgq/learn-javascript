@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//算数运算符+,-,*,/,%,++,--
+	//++，单独使用，++score和score++效果相同
+	//表达式使用，++score，先增加后取值
+	//score++，先取值后增加
+	var score = 100;
+	score++;
+	console.log(score);
+	++score;
+	console.log(score);
+	//比较运算符>,<, >=,<=,!=,==,===,!==
+	//===，比较值和类型
+	//==，只比较值
+	console.log(10=='10');//true
+	console.log(10==='10');//false
+	console.log(10===10);//true
+	//逻辑运算符&&,||,!
+	//注意&&,||的结果是其中一个操作数(影响最终结果的操作数)，!的结果是布尔
+	var addr = "beijing";
+	var age = 23;
+	var height = 170;
+	var name = "jack";
+	var ismoney = 0;
+	//原则上逻辑运算符两边的表达式要求结果是boolean类型的
+	//如果不是boolean类型的，会自动进行类型转换
+	//"", 0, [], null自动转换为false
+	//实体变量信息转换为true
+	console.log(addr && age);//age的值，23
+	console.log(addr || age);//addr的值，beijing
+	console.log(name && ismoney);//0
+	//比较运算符的返回结果是boolean类型
+	console.log(age > 20 && height > 160);//true
+	//!最终结果为boolean结果
+	console.log(!ismoney);//true
+	console.log(!addr);//false
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

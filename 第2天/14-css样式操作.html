@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link href="14.css" type="text/css" rel="stylesheet"/>
+  <script type="text/javascript">
+	
+  </script>
+  <style type="text/css">
+	div{
+		color:red;
+	}
+  </style>
+ </head>
+
+ <body>
+	  <h2>css样式操作</h2>
+	  <div style="width:200px;height:100px;background-color:green">helloworld</div>
+	  <input type="button" value="获取" onclick="f1();"/>
+	  <input type="button" value="设置" onclick="f2();"/>
+	   <script type="text/javascript">
+	   //只能操作行内样式
+	   var div = document.getElementsByTagName('div')[0];
+		function f1(){
+			console.log(div.style.width);
+			console.log(div.style.height);
+			//console.log(div.style.background-color);//复合样式去掉中间的-，js命名规则不允许有-
+			console.log(div.style.backgroundColor);
+			console.log(div.style.color);//只能获得行内样式
+		}
+		function f2(){
+			//只能设置行内样式
+			//有则修改，无则创建，修改后的样式都变为行内样式
+			div.style.width="500px";
+			div.style.backgroundColor="lightgreen";
+			div.style.color="yellow";
+		}
+	   </script>
+ </body>
+</html>

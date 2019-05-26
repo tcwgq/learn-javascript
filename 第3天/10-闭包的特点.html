@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//闭包
+	//函数内部嵌套函数，内部函数作为返回值返回，内部函数就是闭包
+	function f1(){
+		var week = 'sunday';
+		function f2(){
+			console.log(week);
+		}
+		f2();
+		return f2;
+	}
+	var ff = f1();
+	//调用闭包函数
+	//使用闭包可以在外部环境访问局部变量
+	ff();
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

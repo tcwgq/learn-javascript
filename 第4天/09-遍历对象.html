@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	var dog = {hobby:'看家护林', run:'在跑步'};
+	function Cat(){
+		this.name = 'bosi';
+		this.color = 'black';
+		this.leg = 4;
+	}
+	Cat.prototype = dog;
+	var kitty = new Cat();
+	for(var key in kitty){
+		//区分本身的成员和继承的
+		//对象.hasOwnProperty(成员名称)
+		if(kitty.hasOwnProperty(key)){
+			console.log("自己的："+key+'--'+kitty[key]);
+		}else{
+			console.log("继承的："+key+'--'+kitty[key]);
+		}
+		//console.log(key+'--'+kitty[key]);
+		//console.log(kitty.key);//不能通过这种方式访问
+	}
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

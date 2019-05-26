@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+    //普通函数可以使用this关键字
+	//var obj = new 函数名();
+	function f1(){
+		//this代表调用f1函数的当前对象
+		this.name = 'zhangSan';
+		this.age = 23;
+	}
+	window.f1();
+	//f1执行完毕，会给系统增加2个全局变量
+	console.log(name);
+	console.log(age);
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

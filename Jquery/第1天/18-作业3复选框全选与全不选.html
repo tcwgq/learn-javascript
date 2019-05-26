@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	window.onload = function(){
+		$("tr:first").css("background-color", "yellow");
+		//$("tr:even").css("background-color", "lightblue");//会覆盖已有颜色
+		$("tr:gt(0):odd").css("background-color", "lightblue");
+	}
+	function fun1(){
+		var flag = $("#fc").attr("checked");
+		$(".goods").attr("checked", flag);
+	}
+  </script>
+  <style type="text/css">
+	table{
+		width:600px;
+		height:200px;
+		margin:auto;
+		border:1px solid black;
+		border-collapse:collapse;
+	}
+	td{
+		border:1px solid black;
+	}
+	h2{
+		width:600px;
+		margin:auto;
+		text-align:center;
+	}
+  </style>
+ </head>
+
+ <body>
+  <h2>通过复选框实现全选与全不选</h2>
+  <table>
+  <tr>
+	<td><input type="checkbox" id="fc" class="goods" onclick="fun1();"/></td>
+	<td>序号</td><td>名称</td><td>价格</td><td>数量</td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" class="goods"/></td>
+	<td>1</td><td>apple</td><td>5288</td><td>1</td>
+  </tr>
+  <tr>
+	<td><input type="checkbox" class="goods"/></td>
+	<td>2</td><td>nokia</td><td>6888</td><td>2</td>
+  </tr>
+  <tr>
+	<td><input type="checkbox" class="goods"/></td>
+	<td>3</td><td>samsung</td><td>4888</td><td>3</td>
+  </tr>
+  <tr>
+	<td><input type="checkbox" class="goods"/></td>
+	<td>4</td><td>meizu</td><td>3987</td><td>4</td>
+  </tr>
+  <tr>
+	<td><input type="checkbox" class="goods"/></td>
+	<td>5</td><td>xiaomi</td><td>2288</td><td>5</td>
+  </tr>
+  </table>
+ </body>
+</html>

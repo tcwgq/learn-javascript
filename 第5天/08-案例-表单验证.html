@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	window.onload= function(){
+		var form = document.getElementsByTagName('form')[0];
+		form.onsubmit = function(){
+			var regex = /^[a-zA-z0-9][0-9a-zA-Z\._]+@[0-9a-z]+(\.[a-z]+)+$/;
+			var email = document.getElementById('email').value;
+			if(email.match(regex)===null){
+				alert('邮箱格式不正确！');
+				return false;
+			}
+		}
+	}
+
+	console.log(validateMobile('15588656220'));//true
+	console.log(validateMobile('12345678901'));//false
+
+	function validateMobile(mobile){
+		var regex = /^1[34578]\d{9}$/;
+		if(!regex.test(mobile)){
+			return false;
+		}
+		return true;
+	}
+  </script>
+ </head>
+
+ <body>
+	<h2>表单验证</h2>
+	<form method="post" action="08.html">
+		用户名：<input type="text" name="username" /><br/>
+		密码：<input type="text" name="password"/><br/>
+		手机：<input type="text" name="password"/>
+		邮箱：<input id="email" type="text" name="email"/>
+		<input type="submit" value="注册"/>
+	</form>
+ </body>
+</html>

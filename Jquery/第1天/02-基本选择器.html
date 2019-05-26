@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//$("#id属性值")
+		$("#username").css("color", "red");
+		//$("标签名称")
+		$("h2").css("background-color", "pink");
+		$("input").css("width", "500px");
+		//$(".class属性值")
+		$(".apple").css("background-color", "lightgreen");
+		//$("*")，通配符选择器，用于初始化某些样式
+		//$("*").css("background-color", "gray");
+		//$("s1, s2, s3...")，s代表selector，联合选择器
+		$("h2, #username, .apple").css("background-color", "yellow");
+	}
+  </script>
+  <!--
+  <style type="text/css">
+	h1{}
+	input{}
+	#username{}
+	.apple{}
+	*{margin:0; padding:0;}
+	h2, input, #username, .apple{}
+  </style>
+  -->
+ </head>
+
+ <body>
+  <h2>基本选择器</h2>
+  <h2>灵感来自css样式选择器</h2>
+  <input id ="username" type="text" name="username" value="zhangsan" /><br/>
+  <input id ="password" type="text" name="password" value="123" /><br/>
+  <input class ="apple" type="text" name="email" value="tcwgq@outlook.com" /><br/>
+  <input class ="apple" type="text" name="phone" value="123456789" /><br/>
+  <input type="button" value="点击" onclick="fun1()"/>
+ </body>
+</html>

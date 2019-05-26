@@ -1,0 +1,75 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<base href="<%=basePath%>">
+
+<title>My JSP '10-ajax.jsp' starting page</title>
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+<script type="text/javascript"
+	src="<c:url value='/js/jquery-1.11.3.js'/>"></script>
+<script type="text/javascript">
+	function fun1() {
+		//$.get(url, 请求参数，回调函数，返回的数据类型)
+		//简单使用
+		//$.get("<c:url value='/10.jsp'/>");
+		//带回调函数的使用
+		//$.get("<c:url value='/10.jsp'/>", function(msg) {
+		//	alert(msg);
+		//});
+		//带请求参数的使用
+		//$.get("<c:url value='/10.jsp'/>", {
+		//	"name" : "zhangSan",
+		//	"age" : 123
+		//}, function(msg) {
+		//	alert(msg);
+		//});
+		//指定返回值类型的使用
+		$.get("<c:url value='/AServlet'/>", {
+			"name" : "zhangSan",
+			"age" : 123
+		}, function(msg) {
+			//alert(msg);
+			console.log(msg);
+		}, "json");
+	}
+	function fun2() {
+		$.ajax({
+			url : "<c:url value='/AServlet'/>",
+			data : {
+				"name" : "zhangSan",
+				"age" : 123
+			},
+			dataType : "json",
+			type : "POST",
+			success : function(msg) {
+				console.log(msg);
+			}
+		});
+	}
+</script>
+</head>
+
+<body>
+	<h1>ajax的使用</h1>
+	<input type="button" value="触发" onclick="fun1();" />
+	<input type="button" value="请求" onclick="fun2();" />
+	<br>
+</body>
+</html>

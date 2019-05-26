@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function f1(){
+		//节点删除
+		//$(父节点).empty()，清空父节点下的所有子节点
+		$("#wu").empty();
+		//$(选择的节点).remove()，删除指定的节点
+		$("#bei, #yun").remove();//基本选择器中的联合选择器
+	}
+  </script>
+  <style type="text/css">
+	
+  </style>
+ </head>
+
+ <body>
+  <h2>节点删除</h2>
+  <ul id="shu">
+	<li id="bei">刘备</li>
+	<li id="yu">关羽</li>
+	<li id="fei">张飞</li>
+	<li id="yun">赵云</li>
+  </ul>
+   <ul id="wu">
+	<li id="quan">孙权</li>
+	<li>周瑜</li>
+	<li>黄盖</li>
+	<li id="xiang">孙尚香</li>
+  </ul>
+  <input type="button" value="删除" onclick="f1();"/>
+ </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//1，变量必须先声明后使用
+	//函数有预加载，可以先使用，后声明
+	var title = 'java';
+	console.log(title);
+	//同名变量和函数同时存在的情况，分析其执行顺序即可，函数声明第一个执行，其他代码顺序执行
+	var f1 = 'zhangSan';//b
+	f1();//c
+	function f1(){//a
+		console.log('hello');
+	}
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

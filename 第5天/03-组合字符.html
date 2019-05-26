@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script type="text/javascript">
+	//组合字符
+	//\d表示[0-9]
+	//\D表示[^0-9]，^表示非，取反，即除去0-9之外的所有字符
+	//\w表示任意一个字母或数字或下划线，[a-zA-Z0-9]还有下划线
+	//\W表示非字母，数字，下划线
+	//\s表示空格
+	//\S表示非空格
+	//\b表示单词边界
+	//\B表示非单词边界
+	var str =  'this is 20150812';//Array [ "20150812" ]
+	var regex = /\d+/;
+
+	var regex = /\D+/;//Array [ "this is " ]
+
+	var str = 'YueHan_999@163.com';
+	var regex = /\w+/;//Array [ "YueHan_999" ]
+	var regex = /\W+/;//Array [ "@" ]
+
+
+	var str = 'today         is sunny';
+	var regex = /[a-z]+\s+[a-z]+/;//Array [ "today         is" ]
+
+
+	var str = 'this is fucking crazy';
+
+	var regex = /\bis\b/;//严格匹配第二个is
+
+	//replace方法，replace(被替换内容(正则表达式)，替换内容)
+
+	var new_str = str.replace(regex, 'was');
+	console.log(new_str);
+
+	var str = 'this is sunday';
+
+	var regex = /\Bis/;//Array [ "is" ]
+	console.log(str.match(regex));//字符匹配模式
+
+	console.log(regex.exec(str));//模式匹配字符
+
+	console.log(regex.test(str));//是否能够匹配
+
+	console.log(regex.compile());///(?:)/，把正则表达式编译为内部格式，从而执行得更快。
+	console.log(regex.source);//(?:)
+
+	//string与正则表达式相关的方法
+	//•match,找到一个或多个正则表达式的匹配。 
+	//•replace,替换与正则表达式匹配的子串。 
+	//•search,检索与正则表达式相匹配的值。 
+	//•split,把字符串分割为字符串数组。 
+
+	console.log(str.search(regex));//0
+  </script>
+  <title>Document</title>
+ </head>
+ <body>
+  
+ </body>
+</html>

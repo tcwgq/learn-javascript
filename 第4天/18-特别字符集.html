@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//没有特殊说明，都是单次匹配
+	//从左到右，找到第一个满足条件的即可
+	//^，表示字符串的开始
+	//$表示字符串的结尾
+	//^和$存在于全部的正确的正则表达式里面
+	//^和$可以保证正则表达式对目标字符串的完成匹配
+	//在有些场合，要求完整匹配
+	var str = 'xiaoming likes banana';
+
+	var regex = /^banana/;//以banana开始 null
+
+	var regex = /banana$/;//以banana结束 Array [ "banana" ]
+
+	var regex = /^xiaoming/;
+
+	var str = '15588656220';
+	//{m}，严格出现m次
+	var regex = /^1[358][0-9]{9}$/;//Array [ "15588656220" ]
+
+	console.log(str.match(regex));
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

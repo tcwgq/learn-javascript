@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//给li添加事件操作
+	window.onload  = function(){
+		var lis = document.getElementsByTagName('li');
+		for(var i = 0; i < lis.length; i++){
+			lis[i].onmouseover = function(){
+				//this.style.backgroundColor = 'pink';
+				lis[i].style.backgroundColor = 'pink';//lis[i] is undefined[
+			}
+
+			lis[i].onmouseout = function(){
+				//this.style.backgroundColor = '';
+				lis[i].style.backgroundColor = '';//lis[i] is undefined[
+			}
+		}
+	}
+	//i的值定格为3，找不到元素
+	//以上for只是生命函数，鼠标真正划过划出的时候，函数才执行，此时i的值以为3
+	//错误与前面的例子相同，都是访问了同一个变量
+	//我们需要的是每次访问不同的变量
+	//使用闭包可以实现
+  </script>
+ </head>
+
+ <body>
+   <h2>闭包案例-事件操作</h2>
+   <ul>
+		<li>aaa</li>
+		<li>bbb</li>
+		<li>ccc</li>
+   </ul>
+ </body>
+</html>

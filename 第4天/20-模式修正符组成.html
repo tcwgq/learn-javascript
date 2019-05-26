@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//模式修正符
+	//var regex = /正则表达式/模式修正符
+	//i表示忽略大小写
+	//g表示全局匹配
+	//进行全局匹配时，不给显示模式单元内容
+	//可以一次使用多个模式修正符
+	var str = 'Today2015 is1016 sunday2017';
+
+	var regex = /[a-z]+([0-9]+)/ig;//Array [ "Today2015", "is1016", "sunday2017" ]
+
+	console.log(str.match(regex));
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

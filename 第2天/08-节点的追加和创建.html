@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+ 
+ </head>
+
+ <body>
+    <ul>
+		<li city="沈阳">辽宁</li>
+		<li city="济南">山东</li>
+		<li city="杭州">浙江</li>
+	</ul>
+	<input type="button" value="appendChild" onclick="f1();"/>
+  <script type="text/javascript">
+  //往后追加
+	function f1(){
+		var li = document.createElement('li');
+		var txt = document.createTextNode('广东');
+		li.setAttribute('city', '广州');
+		li.appendChild(txt);
+		document.getElementsByTagName('ul')[0].appendChild(li);
+	}
+  </script>
+ </body>
+</html>

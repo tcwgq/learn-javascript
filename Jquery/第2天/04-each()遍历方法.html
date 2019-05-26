@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//each()方法的使用
+		//1.遍历数组
+		var  color=["gold", "yellow", "blue", "green"];
+		$.each(color, function(k, v){
+			console.log(k + "--" + v);
+		});
+		//2.遍历对象
+		var obj = {id:1, name:"zhangsan", age:23, climb:function(){console.log("猫咪上树");}};
+		$.each(obj, function(k, v){
+			console.log(k + "--" + v);
+		});
+		//遍历jQuery对象
+		//$().each(function(k-dom对象下标,v-dom对象));
+		var clr = ["red","blue","pink","purple","yellow","orange","gray"];
+		$("li").each(function(k, v){
+			//console.log(k +"--" + v);
+			//v.style.color="blue";
+			//$(v).css("background-color", "green");
+			//this代表DOM对象，在此代表每个li的DOM对象
+			//console.log(this);
+			//this.style.color="purple";
+			$(this).css("background-color", clr[Math.floor(Math.random()*7)]);//随机数颜色
+		});
+	}
+  </script>
+  <style type="text/css">
+	
+  </style>
+ </head>
+
+ <body>
+  <h2>each()方法的使用</h2>
+  <ul>
+	<li>aaa</li>
+	<li>bbb</li>
+	<li>ccc</li>
+	<li>ddd</li>
+	<li>eee</li>
+  </ul>
+  <input type="button" value="遍历" onclick="fun1();"/>
+ </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//变量的作用域是声明时决定的，而不是运行时决定的
+	var week = "sunday";//外部环境，全局变量
+	function f1(){
+		console.log("week="+week);
+	}
+	function f2(){
+		//内部环境
+		var week = "monday";//局部变量，不能被f1访问
+		f1();
+	}
+	week = "friday";
+	f2();//sunday
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

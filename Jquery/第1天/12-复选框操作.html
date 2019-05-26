@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//获取被选中复选框的值
+		//获取全部复选框对象
+		//遍历全部的复选框
+		//判断复选框是否被选中
+		var s="";
+		for(var i=0; i < $(".hy:checked").length;i++){
+			console.log($(".hy:checked:eq(" + i+")").val());
+			s += $(".hy:checked:eq(" + i+")").val()+",";
+
+		}
+		s= s.substr(0, s.length-1);
+		console.log(s);
+	}
+	function fun2(){
+		//设置默认唱歌旅游被选中
+		//传统方式是遍历所有的复选框，对指定的value值设置checked属性
+		//jquery方式更加简单
+		$(".hy").val(["sing", "photo"]);
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2>复选框操作</h2>
+  爱好：
+  <input type="checkbox" class="hy" name="hobby" value="sing"/>唱歌
+  <input type="checkbox" class="hy" name="hobby" value="dance"/>跳舞
+  <input type="checkbox" class="hy" name="hobby" value="travel"/>旅游
+  <input type="checkbox" class="hy" name="hobby" value="photo"/>摄影
+  <br/>
+  <input type="button" value="获取" onclick="fun1()"/>
+  <input type="button" value="设置" onclick="fun2()"/>
+ </body>
+</html>

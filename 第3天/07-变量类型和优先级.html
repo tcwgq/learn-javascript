@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//执行环境可以访问变量的类型和优先级
+	//内部变量>内部函数>形参>外部变量
+	var weather = 'sun';//外部环境
+	function f1(){
+		function f2(weather){//形参
+			var weather = 'rain';//内部变量
+			function weather(){//内部函数
+				console.log('天气太热');
+			}
+			console.log('天气'+weather);
+		}
+		f2('snow');
+	}
+	f1();
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

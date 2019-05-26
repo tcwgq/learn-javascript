@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//单一成员和对象同时继承，需要先继承对象，在继承单一成员
+	var cat = {name:'xiaohua', climb:function(){console.log(this.name+'在爬树');}};
+	function Dog(){
+		this.name = '旺财';
+		this.color = 'black';
+		this.age = 4;
+	}
+	Dog.prototype.run = '每天跑5公里';
+	Dog.prototype = cat;//cat覆盖单一继承
+	
+	//Dog.prototype = cat;
+	//Dog.prototype.run = '每天跑5公里';
+
+	var dog = new Dog();
+	console.log(dog);
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

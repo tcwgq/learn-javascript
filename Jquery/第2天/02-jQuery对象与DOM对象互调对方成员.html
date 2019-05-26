@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//document.getElementsByTagName("h2")[0].style.backgroundColor="pink";
+		//jquery对象调用dom的成员
+		//$("h2").style.backgroundColor="pink";//$(...).style is undefined
+
+		//jquery对象变为dom对象才能调用对方成员
+		$("h2")[0].style.backgroundColor="blue";
+		console.log($("li"));
+		$("li")[1].style.backgroundColor="blue";
+	}
+	function fun2(){
+		//$("div").css("color", "green");
+		//dom对象调用jQuery对象的成员
+		//document.getElementsByTagName("div")[0].css("color", "red");
+		//DOM对象变为jQuery对象才能调用对方成员
+		//$(DOM对象)，dom对象选择器
+		var dv = document.getElementsByTagName("div")[0];
+		$(dv).css("color", "red");
+
+	}
+  </script>
+  <style type="text/css">
+	
+  </style>
+ </head>
+
+ <body>
+  <h2>jquery对象与dom对象互调成员</h2>
+  <div>I love java!</div>
+  <ul>
+	<li>aaa</li>
+	<li>bbb</li>
+	<li>ccc</li>
+  </ul>
+  <h3>jQuery对象和dom对象不能随便调用对方的成员</h3>
+  <input type="button" value="设置1" onclick="fun1();"/>
+  <input type="button" value="设置2" onclick="fun2();"/>
+ </body>
+</html>

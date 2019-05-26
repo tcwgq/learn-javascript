@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		$("#apple").css("color", "green");
+	}
+	function fun2(){
+		//$("div").css("color", "green");
+		//dom对象调用jQuery对象的成员
+		document.getElementsByTagName("div")[0].css("color", "red");
+	}
+  </script>
+  <style type="text/css">
+	
+  </style>
+ </head>
+
+ <body>
+  <h2>jquery如何封装DOM对象</h2>
+  <div id="apple">I love java!</div>
+  <input type="button" value="设置1" onclick="fun1();"/>
+  <input type="button" value="设置2" onclick="fun2();"/>
+ </body>
+</html>

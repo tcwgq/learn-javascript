@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	//变量作用域链
+	var name = 'zhangSan';//全局变量
+	console.log(name);
+	function f1(){
+		console.log('f1: '+name);
+		function f2(){
+			var person = 80;
+			console.log('f2: '+name);
+			console.log('f2_number='+person);
+			function f3(){
+				var name = 'java0507';
+				console.log('f3: '+name);
+				console.log('f3_number='+person);
+			}
+			f3();
+		}
+		f2();
+	}
+	f1();
+	//变量寻找采用就近原则，一直往外找，最后找到全局环境，找不到的话，undefined
+	//变量在函数内部环境访问执行是一个固态过程
+	//环境内部的变量固化为环境中AO对象的属性
+	//每个环境对应一个AO对象
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

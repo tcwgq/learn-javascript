@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript">
+	var a = 10; 
+	var b = 20;
+	console.log(a + b);
+	console.log('a+b');
+	//把'a+b'当做表达式运行起来
+	console.log(eval('a+b'));//30
+	console.log(alert(30));//undefined
+	console.log(eval('alert(30)'));
+	//console.log(eval('alrt(30)'));//报错，ReferenceError: alrt is not defined
+	//console.log(eval('a+d'));//ReferenceError: d is not defined
+	//主要将json字符串转化为对象
+	var person = {'name':'zhangSan', 'age':23};
+	console.log(person);
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

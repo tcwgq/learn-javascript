@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <meta name="generator" content="editplus" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <script type="text/javascript" src="jquery-1.4.4.js">
+  </script>
+  <script type="text/javascript">
+	function fun1(){
+		//$("s1 s2")，派生选择器，获取s1里面的所有s2节点
+		$("div span").css("color", "blue");
+		//$("s1 > s2")，直接子元素选择器
+		$("div > span").css("color", "green");
+		//$("s1 + s2")，直接兄弟关系选择器，s1后面的直接兄弟节点
+		$("div + span").css("color", "red");
+		//$("s1 ~ s2")，s1后面的所有兄弟节点
+		$("div ~ span").css("color", "purple");
+	}
+  </script>
+ </head>
+
+ <body>
+  <h2>层次选择器</h2>
+  <div>
+	<span>span1</span>
+	<p><span>span2</span></p>
+	<span>span3</span>
+  </div>
+  <span>span4</span>
+  <span>span5</span>
+  <div>div2</div>
+  <span>span6</span>
+  <p>p2</p>
+  <span>span7</span><br/>
+  <input type="button" value="点击" onclick="fun1()"/>
+ </body>
+</html>
